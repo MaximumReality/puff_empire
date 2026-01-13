@@ -91,6 +91,50 @@
         <a href="#" onclick="enterSeedySide()" class="boomer-trap">Legal: Do not click if you enjoy "Mid" cereal.</a>
     </div>
 
+
+        const marshmallows = [
+            { icon: '🥩', name: 'T-BONE STEAK' },
+            { icon: '🍣', name: 'SUSHI ROLL' },
+            { icon: '🍊', name: 'ORANGE BEANIE' },
+            { icon: '🐾', name: 'PAW OF CHAOS' }
+        ];
+
+        // Randomize Marshmallow
+        const randomM = marshmallows[Math.floor(Math.random() * marshmallows.length)];
+        document.getElementById('marshmallow-icon').innerText = randomM.icon;
+        document.getElementById('marshmallow-name').innerText = randomM.name;
+
+        // Toggle between Chef and Burglar
+        function toggleMochkilMode() {
+            const body = document.getElementById('main-body');
+            const hat = document.getElementById('hat-icon');
+            const label = document.getElementById('mode-label');
+            const head = document.getElementById('headline');
+            const sub = document.getElementById('subtext');
+
+            if (body.classList.contains('burglar-mode')) {
+                body.className = 'chef-mode';
+                hat.src = 'chef-hat.png';
+                label.innerText = "STATUS: MICHELIN GOURMET";
+                head.innerText = "MOCHKIL'S KITCHEN";
+                sub.innerText = "Fine dining for discerning cats.";
+            } else {
+                body.className = 'burglar-mode';
+                hat.src = 'orange-beanie.png';
+                label.innerText = "STATUS: PUFFS TO THE STREETS";
+                head.innerText = "MOCHKIL PUFFS";
+                sub.innerText = "MOCHKIL'S MENTAL FOR MOCHKIL PUFFS!";
+            }
+        }
+
+        function goMental() {
+            document.getElementById('app').classList.toggle('mental-mode');
+        }
+
+        function enterSeedySide() {
+            alert("BYPASSING BOOMER TRAPS... Reclaiming the Regan Endorsement.");
+        }
+    
     <script>
         <div class="app-drawer">
     <div class="ios-app-icon" onclick="launchCerealSubWeb()">
@@ -153,49 +197,6 @@
         console.log("Mochkil Puffs Empire Booting...");
     }
 </script>
-
-        const marshmallows = [
-            { icon: '🥩', name: 'T-BONE STEAK' },
-            { icon: '🍣', name: 'SUSHI ROLL' },
-            { icon: '🍊', name: 'ORANGE BEANIE' },
-            { icon: '🐾', name: 'PAW OF CHAOS' }
-        ];
-
-        // Randomize Marshmallow
-        const randomM = marshmallows[Math.floor(Math.random() * marshmallows.length)];
-        document.getElementById('marshmallow-icon').innerText = randomM.icon;
-        document.getElementById('marshmallow-name').innerText = randomM.name;
-
-        // Toggle between Chef and Burglar
-        function toggleMochkilMode() {
-            const body = document.getElementById('main-body');
-            const hat = document.getElementById('hat-icon');
-            const label = document.getElementById('mode-label');
-            const head = document.getElementById('headline');
-            const sub = document.getElementById('subtext');
-
-            if (body.classList.contains('burglar-mode')) {
-                body.className = 'chef-mode';
-                hat.src = 'chef-hat.png';
-                label.innerText = "STATUS: MICHELIN GOURMET";
-                head.innerText = "MOCHKIL'S KITCHEN";
-                sub.innerText = "Fine dining for discerning cats.";
-            } else {
-                body.className = 'burglar-mode';
-                hat.src = 'orange-beanie.png';
-                label.innerText = "STATUS: PUFFS TO THE STREETS";
-                head.innerText = "MOCHKIL PUFFS";
-                sub.innerText = "MOCHKIL'S MENTAL FOR MOCHKIL PUFFS!";
-            }
-        }
-
-        function goMental() {
-            document.getElementById('app').classList.toggle('mental-mode');
-        }
-
-        function enterSeedySide() {
-            alert("BYPASSING BOOMER TRAPS... Reclaiming the Regan Endorsement.");
-        }
     </script>
 </body>
 </html>
