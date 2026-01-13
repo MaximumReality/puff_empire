@@ -92,6 +92,68 @@
     </div>
 
     <script>
+        <div class="app-drawer">
+    <div class="ios-app-icon" onclick="launchCerealSubWeb()">
+        <img src="mochkil-app-icon.png" alt="Puffs App">
+        <span>Mochkil Puffs</span>
+    </div>
+</div>
+
+<div id="cereal-empire-subweb" style="display:none; border-top: 5px solid var(--mochkil-orange); margin-top: 50px;">
+    <div class="sub-web-header">
+        <h2>EMPIRE RECOVERY LOG: 001</h2>
+        <p>Bypassing Azulo's corporate firewall...</p>
+    </div>
+</div>
+
+<style>
+    /* iOS STYLE APP BUTTON */
+    .app-drawer {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .ios-app-icon {
+        width: 70px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .ios-app-icon:active { transform: scale(0.9); }
+    .ios-app-icon img {
+        width: 60px;
+        height: 60px;
+        border-radius: 14px; /* Squircle */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .ios-app-icon span {
+        display: block;
+        font-size: 0.7rem;
+        margin-top: 5px;
+        color: #fff;
+    }
+    .sub-web-header {
+        padding: 20px;
+        background: #111;
+        text-align: center;
+        font-family: 'Courier New', monospace;
+    }
+</style>
+
+<script>
+    function launchCerealSubWeb() {
+        // This "branches" the page out
+        const subweb = document.getElementById('cereal-empire-subweb');
+        subweb.style.display = 'block';
+        
+        // Smooth scroll to the new section
+        subweb.scrollIntoView({ behavior: 'smooth' });
+        
+        // Optional: Trigger a "Hacking" sound or alert
+        console.log("Mochkil Puffs Empire Booting...");
+    }
+</script>
+
         const marshmallows = [
             { icon: '🥩', name: 'T-BONE STEAK' },
             { icon: '🍣', name: 'SUSHI ROLL' },
